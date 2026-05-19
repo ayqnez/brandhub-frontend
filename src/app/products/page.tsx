@@ -1,18 +1,17 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { Suspense, useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { api } from '@/lib/api';
 import { Product, ApiResponse, Pagination } from '@/types';
 import { useCart } from '@/lib/cart';
 import { useAuth } from '@/lib/auth';
-import Button from '@/components/ui/Button';
 import { useRealtimeRefetch } from '@/websocket/useRealtimeRefetch';
 import { WS_EVENTS } from '@/websocket/events';
 import s from './page.module.scss';
 
-export default function ProductsPage() {
+function ProductsContent() {
   const sp = useSearchParams();
   const [products, setProducts] = useState<Product[]>([]);
   const [pagination, setPagination] = useState<Pagination | null>(null);
@@ -117,5 +116,13 @@ export default function ProductsPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function ProductsPage() {
+  return (
+    <Suspense fallback={<div style={{ padding: '2rem' }}>Loading…</div>}>
+      <ProductsContent />
+    </Suspense>
   );
 }

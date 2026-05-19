@@ -9,6 +9,8 @@ export default function SocketProvider({ children }: { children: React.ReactNode
   const { token, updateUser } = useAuth();
 
   useEffect(() => {
+    if (!socketClient) return;
+
     if (!token) {
       socketClient.disconnect();
       return;

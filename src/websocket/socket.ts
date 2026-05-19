@@ -117,4 +117,4 @@ class SocketClient {
   }
 }
 
-export const socketClient = new SocketClient();
+export const socketClient = typeof window !== 'undefined' ? new SocketClient() : null as unknown as SocketClient;

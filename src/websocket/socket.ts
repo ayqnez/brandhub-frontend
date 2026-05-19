@@ -27,6 +27,8 @@ class SocketClient {
   private manualDisconnect = false;
 
   connect(token: string) {
+    if (typeof window === 'undefined') return; 
+
     if (this.socket?.readyState === WebSocket.OPEN && this.token === token) return;
     this.token = token;
     this.manualDisconnect = false;

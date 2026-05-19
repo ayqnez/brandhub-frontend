@@ -1,0 +1,252 @@
+.page {
+  padding: 40px 0 80px;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+// h1 {
+//   font-size: 36px;
+//   font-family: var(--font-display);
+//   margin-bottom: 32px;
+// }
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 40px;
+  align-items: start;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.itemImg {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--surface-2);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.itemInfo {
+  flex: 1;
+  min-width: 0;
+
+  h4 {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  p {
+    font-size: 13px;
+    color: var(--text-2);
+  }
+}
+
+.itemQty {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+
+  button {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: var(--surface-2);
+    font-size: 16px;
+    cursor: pointer;
+    color: var(--text);
+    transition: background var(--transition);
+
+    &:hover {
+      background: var(--border);
+    }
+  }
+
+  span {
+    width: 36px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+.itemTotal {
+  font-size: 15px;
+  font-weight: 600;
+  min-width: 64px;
+  text-align: right;
+}
+
+.removeBtn {
+  border: none;
+  background: none;
+  color: var(--text-3);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px;
+  transition: color var(--transition);
+
+  &:hover {
+    color: var(--error);
+  }
+}
+
+/* sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.summary {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+
+  h3 {
+    font-size: 17px;
+    font-family: var(--font-display);
+    margin-bottom: 16px;
+  }
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-2);
+
+  strong {
+    color: var(--text);
+  }
+}
+
+.totalRow {
+  border-bottom: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 4px;
+  padding-top: 12px;
+}
+
+.addressForm {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  h3 {
+    font-size: 17px;
+    font-family: var(--font-display);
+  }
+}
+
+.notesLabel {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-2);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.notesArea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  font-size: 14px;
+  resize: vertical;
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color var(--transition);
+
+  &:focus {
+    border-color: var(--accent);
+  }
+}
+
+.errorAlert {
+  background: var(--error-light);
+  color: var(--error);
+  border: 1px solid rgba(192, 57, 43, 0.2);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 13px;
+}
+
+/* empty */
+.empty {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+}
+
+.emptyInner {
+  text-align: center;
+
+  h2 {
+    font-size: 32px;
+    font-family: var(--font-display);
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: var(--text-2);
+    margin-bottom: 24px;
+  }
+}
+
+.emptyIcon {
+  font-size: 64px;
+  display: block;
+  margin-bottom: 16px;
+}

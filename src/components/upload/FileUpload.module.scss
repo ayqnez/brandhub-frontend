@@ -1,0 +1,50 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input {
+  width: 100%;
+  border: 1px dashed var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.button {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.hint {
+  color: var(--text-3);
+  font-size: 13px;
+}
+
+.error {
+  border: 1px solid var(--error);
+  color: var(--error);
+  background: var(--error-light);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 14px;
+}

@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
+
+:root {
+  --bg: #f7f5f0;
+  --surface: #ffffff;
+  --surface-2: #f0ede6;
+  --border: #e2ddd5;
+  --text: #1a1714;
+  --text-2: #6b6560;
+  --text-3: #9e9890;
+  --accent: #c8502a;
+  --accent-light: #f5ebe6;
+  --accent-dark: #a33f1e;
+  --success: #3a7d5c;
+  --success-light: #e8f5ef;
+  --warning: #b5860d;
+  --warning-light: #fdf5e0;
+  --error: #c0392b;
+  --error-light: #fde8e6;
+
+  --radius-sm: 6px;
+  --radius: 12px;
+  --radius-lg: 20px;
+
+  --shadow-sm: 0 1px 3px rgba(26, 23, 20, 0.06);
+  --shadow: 0 4px 16px rgba(26, 23, 20, 0.08);
+  --shadow-lg: 0 12px 40px rgba(26, 23, 20, 0.12);
+
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+
+  --transition: 0.18s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+button { cursor: pointer; font-family: var(--font-body); }
+
+img { max-width: 100%; display: block; }
+
+input, textarea, select {
+  font-family: var(--font-body);
+  font-size: 15px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.2;
+}

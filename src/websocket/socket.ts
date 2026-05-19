@@ -10,7 +10,10 @@ function resolveWsUrl(token: string) {
   if (explicit) return `${explicit.replace(/\/$/, '')}?token=${encodeURIComponent(token)}`;
 
   const api = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
-  const base = api.replace(/\/api\/?$/, '').replace(/^http/, 'ws');
+  const base = api
+    .replace(/\/api\/?$/, '')
+    .replace(/^https/, 'wss')  
+    .replace(/^http(?!s)/, 'ws'); 
   return `${base}?token=${encodeURIComponent(token)}`;
 }
 
